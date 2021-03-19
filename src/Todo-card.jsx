@@ -21,7 +21,7 @@ const TodoCard  = () => {
          return(
             __olditem.filter((arr, index) => {
                //console.log(arr)
-               return index != item_id
+               return index !== item_id
             })
          );
       });

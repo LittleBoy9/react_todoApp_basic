@@ -7,12 +7,14 @@ const Todolist = (props) => {
    return (
       <>     
          <li> 
-            <span><DeleteForeverRoundedIcon 
+                                          
+            {props.text} 
+            <span>
+               <DeleteForeverRoundedIcon 
                onClick={() => {
                   props.onSelect(props.id) 
-               }}/>
-            </span>                               
-            {props.text} 
+               }} className="deleteIcon"/>
+            </span> 
          </li>
       </>
    );
