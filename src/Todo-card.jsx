@@ -16,7 +16,6 @@ const TodoCard  = () => {
       set_newitem('')
    };
    const deleteItem = (item_id) => {
-      //console.log(item_id)
       set_itemset((__olditem) => {
          return(
             __olditem.filter((arr, index) => {
@@ -26,17 +25,18 @@ const TodoCard  = () => {
          );
       });
    }
+   
    return(
       <>
          <div className="main_div">
-            <div className="center_div">
+            <div className="center_div ">
                <br/>
                   <h1>ToDo List</h1>
                <br/>
                <input type="text" placeholder="type something" maxLength="15" value={newitem} onChange={ inputEvent }/>
                <button onClick={ addItem }>+</button>
-
-               <ol>
+               <div >
+               <ol className="">
                   {
                      itemset.map((itemval, index) => {                                   
                         return <Todolist 
@@ -44,11 +44,11 @@ const TodoCard  = () => {
                               id={index}
                               text={itemval} 
                               onSelect={ deleteItem }
-                           />;         
+                           />;
                      })
                   }
                </ol>
-
+               </div>
             </div>
          </div>
       </>
